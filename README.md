@@ -1,3 +1,4 @@
+
 ## The Last.fm Debloater
 ### What is this?
 This is a Firefox addon written in JavaScript which mitigates some of the design choices regarding the music website [Last.fm](https://www.last.fm/) in the form of a handy options menu.
@@ -22,9 +23,11 @@ The betterment of Last.fm as a website. It's down to personal preference, obviou
 ---
 
 ### Future plans and things to do
+- [ ] Port the addon to Chrome?
 - Keep track of Last.fm devs breaking the functionality of the addon,
 - Keep track of Last.fm devs implementing design choices that don't necessarily align with my personal tastes,
 - Implement new features if anything worthwhile comes to mind.
+
 
 ### Additional notes
 Please note that the existence of this addon is not meant as a slight to whoever's in charge of design at Last.fm - I'm sure they're significantly better at these things than I am. The only reason I wrote the addon is to make my personal experience with the website more enjoyable.
