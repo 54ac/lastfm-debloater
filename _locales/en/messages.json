@@ -1,0 +1,35 @@
+{
+	"extText": {
+		"message": "Mitigates some of the design choices regarding Last.fm in the form of a handy options menu."
+	},
+	"artistFirstRecent": {
+		"message": "Artist — Title song format in Recent Tracks chart"
+	},
+	"titleSpace": {
+		"message": "More space for song title in Recent Tracks chart"
+	},
+	"squareAvatars": {
+		"message": "Square avatars/artist images"
+	},
+	"compactCharts": {
+		"message": "Compact rows in charts"
+	},
+	"compactArtistHeader": {
+		"message": "Compact artist header"
+	},
+	"barColor": {
+		"message": "Change color of scrobble bar in charts"
+	},
+	"barFontInvert": {
+		"message": "Invert scrobble bar font color"
+	},
+	"fontWeight": {
+		"message": "Regular font weight for song titles/artists"
+	},
+	"scrobbleText": {
+		"message": "Remove the word \"scrobbles\" from scrobble bar"
+	},
+	"artistFirstTop": {
+		"message": "Artist — Title song format in Top Tracks chart"
+	}
+}

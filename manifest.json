@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	"name": "The Last.fm Debloater",
+	"description": "__MSG_extText__",
+	"default_locale": "en",
+	"version": "1.1.0",
+	"permissions": [
+		"storage"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.last.fm/*"
+			],
+			"js": [
+				"lastfm.js"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"icons": {
+		"48": "icon.png"
+	},
+	"options_ui": {
+		"page": "options.html",
+		"browser_style": true
+	}
+}

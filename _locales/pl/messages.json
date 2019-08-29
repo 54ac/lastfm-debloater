@@ -1,0 +1,35 @@
+{
+	"extText": {
+		"message": "Pozwala na zmianę niektórych opcji dotyczących wyglądu Last.fm w formie wygodnego menu."
+	},
+	"artistFirstRecent": {
+		"message": "Wpisy w tabeli \"Ostatnie utwory\" w formacie Artysta — Tytuł"
+	},
+	"titleSpace": {
+		"message": "Więcej miejsca dla tytułu utworu w tabeli \"Ostatnie utwory\""
+	},
+	"squareAvatars": {
+		"message": "Kwadratowe avatary/miniaturki artystów"
+	},
+	"compactCharts": {
+		"message": "Węższe wiersze w tabelach"
+	},
+	"compactArtistHeader": {
+		"message": "Węższy nagłówek na stronie artysty"
+	},
+	"barColor": {
+		"message": "Zmiana koloru paska scrobbli w tabelach"
+	},
+	"barFontInvert": {
+		"message": "Odwrócony kolor czcionki na pasku scrobbli"
+	},
+	"fontWeight": {
+		"message": "Usunięcie pogrubienia czcionki w tytułach/nazwach/imionach"
+	},
+	"scrobbleText": {
+		"message": "Usunięcie słowa \"scrobbli\" z paska scrobbli"
+	},
+	"artistFirstTop": {
+		"message": "Wpisy w tabeli \"Najpopularniejsze utwory\" w formacie Artysta — Tytuł"
+	}
+}
