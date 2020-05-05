@@ -1,5 +1,5 @@
 const options = [
-	"artistFirstRecent",
+	"artistFirst",
 	"titleSpace",
 	"squareAvatars",
 	"compactCharts",
@@ -7,8 +7,7 @@ const options = [
 	"barColor",
 	"barFontInvert",
 	"fontWeight",
-	"scrobbleText",
-	"artistFirstTop"
+	"scrobbleText"
 ];
 //remember to add new options here as well
 
@@ -17,16 +16,15 @@ function debloat() {
 		browser.storage.sync.get(o).then(res => {
 			//have to check typeof because of false
 			if (res[o] === true || typeof res[o] === "undefined") {
-				if (
-					o === "artistFirstRecent" ||
-					o === "titleSpace" ||
-					o === "artistFirstTop"
-				) {
+				if (o === "artistFirst" || o === "titleSpace") {
 					let elements = document.getElementsByClassName(
 						"chartlist--with-artist"
 					);
 					for (let e of elements) {
-						if (e.parentNode.id === "recent-tracks-section") {
+						if (
+							e.parentNode.id === "recent-tracks-section" ||
+							e.parentNode.id === "user-loved-tracks-section"
+						) {
 							for (let row of e.getElementsByClassName("chartlist-row")) {
 								//contains(o) to monitor class list to not fall into endless loop
 								if (!row.classList.contains(o)) {
@@ -44,7 +42,7 @@ function debloat() {
 										songName.style.width = "inherit";
 									}
 
-									if (o === "artistFirstRecent") {
+									if (o === "artistFirst") {
 										row.insertBefore(artist, songName);
 
 										let emDash = document.createElement("span");
@@ -61,7 +59,7 @@ function debloat() {
 						} else if (e.parentNode.parentNode.id === "top-tracks") {
 							for (let row of e.getElementsByClassName("chartlist-row")) {
 								if (!row.classList.contains(o)) {
-									if (o === "artistFirstTop") {
+									if (o === "artistFirst") {
 										let artist = row.getElementsByClassName(
 											"chartlist-artist"
 										)[0];

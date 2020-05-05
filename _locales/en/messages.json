@@ -2,11 +2,11 @@
 	"extText": {
 		"message": "Mitigates some of the design choices regarding Last.fm in the form of a handy options menu."
 	},
-	"artistFirstRecent": {
-		"message": "Artist — Title song format in Recent Tracks chart"
+	"artistFirst": {
+		"message": "Artist — Title song format in charts"
 	},
 	"titleSpace": {
-		"message": "More space for song title in Recent Tracks chart"
+		"message": "More space for song title in charts"
 	},
 	"squareAvatars": {
 		"message": "Square avatars/artist images"
@@ -28,8 +28,5 @@
 	},
 	"scrobbleText": {
 		"message": "Remove the word \"scrobbles\" from scrobble bar"
-	},
-	"artistFirstTop": {
-		"message": "Artist — Title song format in Top Tracks chart"
 	}
 }
