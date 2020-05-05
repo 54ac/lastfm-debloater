@@ -1,4 +1,3 @@
-
 ## The Last.fm Debloater
 ### What is this?
 This is a Firefox addon written in JavaScript which mitigates some of the design choices regarding the music website [Last.fm](https://www.last.fm/) in the form of a handy options menu.

@@ -124,6 +124,7 @@ function debloat() {
 							if (o === "compactCharts") {
 								e.style.paddingTop = "4px";
 								e.style.paddingBottom = "4px";
+								e.style.minHeight = "0px";
 							}
 
 							if (e.getElementsByClassName("chartlist-bar").length > 0) {
