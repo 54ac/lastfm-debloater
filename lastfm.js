@@ -9,29 +9,26 @@ const options = [
 	"fontWeight",
 	"scrobbleText"
 ];
-//remember to add new options here as well
+// remember to add new options here as well
 
 function debloat() {
 	options.forEach(o => {
-		browser.storage.sync.get(o).then(res => {
-			//have to check typeof because of false
+		browser.storage.local.get(o).then(res => {
+			// have to check typeof because of false
 			if (res[o] === true || typeof res[o] === "undefined") {
 				if (o === "artistFirst" || o === "titleSpace") {
-					let elements = document.getElementsByClassName(
+					const elements = document.getElementsByClassName(
 						"chartlist--with-artist"
 					);
-					for (let e of elements) {
-						if (
-							e.parentNode.id === "recent-tracks-section" ||
-							e.parentNode.id === "user-loved-tracks-section"
-						) {
-							for (let row of e.getElementsByClassName("chartlist-row")) {
-								//contains(o) to monitor class list to not fall into endless loop
+					for (const e of elements) {
+						if (!e.classList.contains("chartlist--with-bar")) {
+							for (const row of e.getElementsByClassName("chartlist-row")) {
+								// contains(o) to monitor class list to not fall into endless loop
 								if (!row.classList.contains(o)) {
-									let artist = row.getElementsByClassName(
+									const artist = row.getElementsByClassName(
 										"chartlist-artist"
 									)[0];
-									let songName = row.getElementsByClassName(
+									const songName = row.getElementsByClassName(
 										"chartlist-name"
 									)[0];
 
@@ -45,25 +42,25 @@ function debloat() {
 									if (o === "artistFirst") {
 										row.insertBefore(artist, songName);
 
-										let emDash = document.createElement("span");
+										const emDash = document.createElement("span");
 										emDash.textContent = "—";
 										emDash.className = "emDash";
 
 										if (row.getElementsByClassName("emDash").length === 0)
-											//only insert if necessary
+											// only insert if necessary
 											row.insertBefore(emDash, songName);
 									}
-									row.classList.add(o); //class list monitoring purposes
+									row.classList.add(o); // class list monitoring purposes
 								}
 							}
-						} else if (e.parentNode.parentNode.id === "top-tracks") {
-							for (let row of e.getElementsByClassName("chartlist-row")) {
+						} else if (e.classList.contains("chartlist--with-bar")) {
+							for (const row of e.getElementsByClassName("chartlist-row")) {
 								if (!row.classList.contains(o)) {
 									if (o === "artistFirst") {
-										let artist = row.getElementsByClassName(
+										const artist = row.getElementsByClassName(
 											"chartlist-artist"
 										)[0];
-										let songName = row.getElementsByClassName(
+										const songName = row.getElementsByClassName(
 											"chartlist-name"
 										)[0];
 
@@ -76,7 +73,7 @@ function debloat() {
 
 										row.insertBefore(artist, songName);
 
-										let emDash = document.createElement("span");
+										const emDash = document.createElement("span");
 										emDash.textContent = "—";
 										emDash.className = "emDash";
 
@@ -91,18 +88,18 @@ function debloat() {
 				}
 
 				if (o === "squareAvatars") {
-					//horrible workaround for css pseudoclass
-					let rule = ".avatar::after { border-radius: 0px !important; }";
+					// horrible workaround for css pseudoclass
+					const rule = ".avatar::after { border-radius: 0px !important; }";
 					if (document.styleSheets[0].cssRules[0].cssText !== rule)
 						document.styleSheets[0].insertRule(rule, 0);
 
-					let elements = document.getElementsByClassName("avatar");
+					const elements = document.getElementsByClassName("avatar");
 
-					for (let e of elements) {
+					for (const e of elements) {
 						if (!e.classList.contains(o)) {
 							e.classList.add(o);
-							let img = e.getElementsByTagName("img");
-							for (let i of img) {
+							const img = e.getElementsByTagName("img");
+							for (const i of img) {
 								i.style.borderRadius = "0";
 							}
 						}
@@ -116,8 +113,8 @@ function debloat() {
 					o === "fontWeight" ||
 					o === "scrobbleText"
 				) {
-					let elements = document.getElementsByClassName("chartlist-row");
-					for (let e of elements) {
+					const elements = document.getElementsByClassName("chartlist-row");
+					for (const e of elements) {
 						if (!e.classList.contains(o)) {
 							if (o === "compactCharts") {
 								e.style.paddingTop = "4px";
@@ -127,11 +124,11 @@ function debloat() {
 
 							if (e.getElementsByClassName("chartlist-bar").length > 0) {
 								if (o === "barColor") {
-									browser.storage.sync.get("barColorPicker").then(color => {
+									browser.storage.local.get("barColorPicker").then(color => {
 										e.getElementsByClassName(
 											"chartlist-count-bar-slug"
 										)[0].style.backgroundColor =
-											color["barColorPicker"] || "#b90000";
+											color.barColorPicker || "#b90000";
 									});
 								}
 
@@ -158,7 +155,7 @@ function debloat() {
 
 				if (o === "compactArtistHeader") {
 					let header = document.getElementsByClassName("header-new-content");
-					if (header.length > 0) header = header[0];
+					if (header.length > 0) [header] = header;
 
 					if (header && !header.classList.contains(o)) {
 						header.getElementsByClassName(
@@ -176,7 +173,7 @@ function debloat() {
 }
 debloat();
 
-//add mutation observer due to ajax
+// add mutation observer due to ajax
 const targetNode = document.body;
 const observerOptions = {
 	childList: true,
