@@ -21,12 +21,12 @@
 		"message": "Change color of scrobble bar in charts"
 	},
 	"barFontInvert": {
-		"message": "Invert scrobble bar font color"
+		"message": "Invert scrobble bar font color (widens bar when necessary)"
 	},
 	"fontWeight": {
 		"message": "Regular font weight for song titles/artists"
 	},
 	"scrobbleText": {
-		"message": "Remove the word \"scrobbles\" from scrobble bar"
+		"message": "Remove descriptors (e.g. \"scrobbles\") from scrobble bar"
 	}
 }

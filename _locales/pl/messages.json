@@ -2,11 +2,11 @@
 	"extText": {
 		"message": "Pozwala na zmianę niektórych opcji dotyczących wyglądu Last.fm w formie wygodnego menu."
 	},
-	"artistFirstRecent": {
-		"message": "Wpisy w tabeli \"Ostatnie utwory\" w formacie Artysta — Tytuł"
+	"artistFirst": {
+		"message": "Wpisy w tabelach w formacie Artysta — Tytuł"
 	},
 	"titleSpace": {
-		"message": "Więcej miejsca dla tytułu utworu w tabeli \"Ostatnie utwory\""
+		"message": "Więcej miejsca dla tytułu utworu w tabelach"
 	},
 	"squareAvatars": {
 		"message": "Kwadratowe avatary/miniaturki artystów"
@@ -21,15 +21,12 @@
 		"message": "Zmiana koloru paska scrobbli w tabelach"
 	},
 	"barFontInvert": {
-		"message": "Odwrócony kolor czcionki na pasku scrobbli"
+		"message": "Odwrócony kolor czcionki na pasku scrobbli (rozszerza pasek w razie potrzeby)"
 	},
 	"fontWeight": {
 		"message": "Usunięcie pogrubienia czcionki w tytułach/nazwach/imionach"
 	},
 	"scrobbleText": {
-		"message": "Usunięcie słowa \"scrobbli\" z paska scrobbli"
-	},
-	"artistFirstTop": {
-		"message": "Wpisy w tabeli \"Najpopularniejsze utwory\" w formacie Artysta — Tytuł"
+		"message": "Usunięcie słów opisowych (np. \"scrobbli\") z paska scrobbli"
 	}
 }
