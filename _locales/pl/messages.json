@@ -5,9 +5,6 @@
 	"artistFirst": {
 		"message": "Wpisy w tabelach w formacie Artysta — Tytuł"
 	},
-	"titleSpace": {
-		"message": "Więcej miejsca dla tytułu utworu w tabelach"
-	},
 	"squareAvatars": {
 		"message": "Kwadratowe avatary/miniaturki artystów"
 	},
@@ -20,8 +17,17 @@
 	"barColor": {
 		"message": "Zmiana koloru paska scrobbli w tabelach"
 	},
+	"barColorDefault": {
+		"message": "Domyślny"
+	},
 	"barFontInvert": {
 		"message": "Odwrócony kolor czcionki na pasku scrobbli (rozszerza pasek w razie potrzeby)"
+	},
+	"fontFamily": {
+		"message": "Domyślna bezszeryfowa czcionka przeglądarki"
+	},
+	"fontColor": {
+		"message": "Czarny tekst (zamiast ciemnoszarego)"
 	},
 	"fontWeight": {
 		"message": "Usunięcie pogrubienia czcionki w tytułach/nazwach/imionach"

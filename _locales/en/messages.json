@@ -5,9 +5,6 @@
 	"artistFirst": {
 		"message": "Artist — Title song format in charts"
 	},
-	"titleSpace": {
-		"message": "More space for song title in charts"
-	},
 	"squareAvatars": {
 		"message": "Square avatars/artist images"
 	},
@@ -20,8 +17,17 @@
 	"barColor": {
 		"message": "Change color of scrobble bar in charts"
 	},
+	"barColorDefault": {
+		"message": "Default"
+	},
 	"barFontInvert": {
 		"message": "Invert scrobble bar font color (widens bar when necessary)"
+	},
+	"fontFamily": {
+		"message": "Default browser sans-serif font"
+	},
+	"fontColor": {
+		"message": "Black text (instead of dark gray)"
 	},
 	"fontWeight": {
 		"message": "Regular font weight for song titles/artists"

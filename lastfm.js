@@ -1,11 +1,12 @@
 const options = [
 	"artistFirst",
-	"titleSpace",
 	"squareAvatars",
 	"compactCharts",
 	"compactArtistHeader",
 	"barColor",
 	"barFontInvert",
+	"fontFamily",
+	"fontColor",
 	"fontWeight",
 	"scrobbleText"
 ];
@@ -15,7 +16,7 @@ function debloat() {
 	options.forEach(o => {
 		browser.storage.local.get(o).then(res => {
 			if (res[o] === false) return;
-			if (o === "artistFirst" || o === "titleSpace") {
+			if (o === "artistFirst") {
 				const elements = document.getElementsByClassName(
 					"chartlist--with-artist"
 				);
@@ -27,14 +28,12 @@ function debloat() {
 							const artist = row.getElementsByClassName("chartlist-artist")[0];
 							const songName = row.getElementsByClassName("chartlist-name")[0];
 
-							if (o === "titleSpace") {
+							if (o === "artistFirst") {
 								artist.style.flexGrow = "0";
 								artist.style.flexShrink = "0";
 								artist.style.width = "inherit";
 								songName.style.width = "inherit";
-							}
 
-							if (o === "artistFirst") {
 								row.insertBefore(artist, songName);
 
 								const emDash = document.createElement("span");
@@ -172,6 +171,9 @@ function debloat() {
 					header.classList.add(o);
 				}
 			}
+
+			if (o === "fontFamily") document.body.style.fontFamily = "sans-serif";
+			if (o === "fontColor") document.body.style.color = "#000";
 		});
 	});
 }
