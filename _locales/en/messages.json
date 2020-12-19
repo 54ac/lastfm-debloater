@@ -24,7 +24,7 @@
 		"message": "Invert scrobble bar font color (widens bar when necessary)"
 	},
 	"fontFamily": {
-		"message": "Default browser sans-serif font"
+		"message": "Remove main font"
 	},
 	"fontColor": {
 		"message": "Black text (instead of dark gray)"

@@ -172,7 +172,13 @@ function debloat() {
 				}
 			}
 
-			if (o === "fontFamily") document.body.style.fontFamily = "sans-serif";
+			if (o === "fontFamily")
+				document.body.style.fontFamily = window
+					.getComputedStyle(document.body)
+					.getPropertyValue("font-family")
+					.split(",")
+					.slice(1)
+					.join(",");
 			if (o === "fontColor") document.body.style.color = "#000";
 		});
 	});

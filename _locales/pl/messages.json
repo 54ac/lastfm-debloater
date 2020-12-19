@@ -24,7 +24,7 @@
 		"message": "Odwrócony kolor czcionki na pasku scrobbli (rozszerza pasek w razie potrzeby)"
 	},
 	"fontFamily": {
-		"message": "Domyślna bezszeryfowa czcionka przeglądarki"
+		"message": "Usuń główną czcionkę"
 	},
 	"fontColor": {
 		"message": "Czarny tekst (zamiast ciemnoszarego)"
