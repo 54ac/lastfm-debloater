@@ -172,13 +172,16 @@ function debloat() {
 				}
 			}
 
-			if (o === "fontFamily")
-				document.body.style.fontFamily = window
+			if (o === "fontFamily") {
+				const fontList = window
 					.getComputedStyle(document.body)
 					.getPropertyValue("font-family")
-					.split(",")
-					.slice(1)
-					.join(",");
+					.split(",");
+
+				if (fontList[0] === "Barlow")
+					document.body.style.fontFamily = fontList.slice(1).join(",");
+			}
+
 			if (o === "fontColor") document.body.style.color = "#000";
 		});
 	});
