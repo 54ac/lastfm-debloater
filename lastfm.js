@@ -12,9 +12,16 @@ const options = [
 ];
 // remember to add new options here as well
 
+const dash = () => {
+	const newDash = document.createElement("span");
+	newDash.textContent = "–";
+	newDash.className = "dash";
+	return newDash;
+};
+
 function debloat() {
-	options.forEach(o => {
-		browser.storage.local.get(o).then(res => {
+	options.forEach((o) => {
+		browser.storage.local.get(o).then((res) => {
 			if (res[o] === false) return;
 			if (o === "artistFirst") {
 				const elements = document.getElementsByClassName(
@@ -36,13 +43,9 @@ function debloat() {
 
 								row.insertBefore(artist, songName);
 
-								const emDash = document.createElement("span");
-								emDash.textContent = "—";
-								emDash.className = "emDash";
-
-								if (row.getElementsByClassName("emDash").length === 0)
-									// only insert if necessary
-									row.insertBefore(emDash, songName);
+								if (row.getElementsByClassName("dash").length === 0)
+									// only if necessary
+									row.insertBefore(dash(), songName);
 							}
 							row.classList.add(o); // class list monitoring purposes
 						}
@@ -61,17 +64,18 @@ function debloat() {
 								artist.style.flexShrink = "0";
 								artist.style.position = "static";
 								artist.style.marginTop = "inherit";
+								// margin copied from tracks chart - otherwise width gets changed on hover
 								artist.style.marginRight = "7.5px";
 								songName.style.marginBottom = "inherit";
 
 								row.insertBefore(artist, songName);
 
-								const emDash = document.createElement("span");
-								emDash.textContent = "—";
-								emDash.className = "emDash";
-
-								if (row.getElementsByClassName("emDash").length === 0)
-									row.insertBefore(emDash, songName);
+								// only if artist field is not empty
+								if (
+									row.getElementsByClassName("dash").length === 0 &&
+									artist.textContent.trim().length > 0
+								)
+									row.insertBefore(dash(), songName);
 								row.classList.add(o);
 							}
 						}
@@ -82,7 +86,11 @@ function debloat() {
 			if (o === "squareAvatars") {
 				// horrible workaround for css pseudoclass
 				const rule = ".avatar::after { border-radius: 0px !important; }";
-				if (document.styleSheets[0].cssRules[0].cssText !== rule)
+				if (
+					document.styleSheets.length > 0 &&
+					document.styleSheets[0].cssRules.length > 0 &&
+					document.styleSheets[0].cssRules[0].cssText !== rule
+				)
 					document.styleSheets[0].insertRule(rule, 0);
 
 				const elements = document.getElementsByClassName("avatar");
@@ -117,7 +125,7 @@ function debloat() {
 							browser.storage.local
 								.get("barColorPicker")
 								.then(
-									color =>
+									(color) =>
 										(e.getElementsByClassName(
 											"chartlist-count-bar-slug"
 										)[0].style.backgroundColor =
@@ -131,7 +139,7 @@ function debloat() {
 
 							// white on white workaround
 							browser.storage.local.get("barColorPicker").then(
-								color =>
+								(color) =>
 									(e.getElementsByClassName(
 										"chartlist-count-bar-link"
 									)[0].style.backgroundColor =
@@ -161,7 +169,7 @@ function debloat() {
 				let header = document.getElementsByClassName("header-new-content");
 				if (header.length > 0) [header] = header;
 
-				if (header && !header.classList.contains(o)) {
+				if (header?.classList?.contains(o)) {
 					header.getElementsByClassName(
 						"artist-header-featured-items"
 					)[0].style.marginTop = "16px";

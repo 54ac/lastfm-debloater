@@ -3,7 +3,7 @@
 	"name": "The Last.fm Debloater",
 	"description": "__MSG_extText__",
 	"default_locale": "en",
-	"version": "1.4.3",
+	"version": "1.4.4",
 	"permissions": ["storage"],
 	"content_scripts": [
 		{
