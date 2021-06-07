@@ -8,7 +8,8 @@ const options = [
 	"fontFamily",
 	"fontColor",
 	"fontWeight",
-	"scrobbleText"
+	"scrobbleText",
+	"timestampSwap"
 ];
 // remember to add new options here as well
 
@@ -191,6 +192,37 @@ function debloat() {
 			}
 
 			if (o === "fontColor") document.body.style.color = "#000";
+
+			if (o === "timestampSwap") {
+				const elements = document.getElementsByClassName("chartlist-timestamp");
+
+				for (const e of elements) {
+					const eSpan = e.getElementsByTagName("span")[0];
+					const spanTitle = eSpan?.title;
+					const spanText = eSpan?.textContent;
+
+					if (
+						!eSpan.classList?.contains("chartlist-now-scrobbling") &&
+						!eSpan.classList?.contains(o) &&
+						spanTitle &&
+						spanText
+					) {
+						const eDate = new Date(spanTitle.split(",")[0].trim());
+						const dateNow = new Date();
+						if (
+							eDate &&
+							eDate.getFullYear() === dateNow.getFullYear() &&
+							eDate.getMonth() === dateNow.getMonth() &&
+							eDate.getDate() === dateNow.getDate()
+						)
+							eSpan.textContent = spanTitle.split(",")[1].trim();
+						else eSpan.textContent = spanTitle.trim();
+
+						eSpan.title = spanText.trim();
+						eSpan.classList.add("timestampSwap");
+					}
+				}
+			}
 		});
 	});
 }

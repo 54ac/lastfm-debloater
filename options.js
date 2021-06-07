@@ -21,7 +21,7 @@ function saveOptions(o) {
 
 function restoreOptions() {
 	for (const o of options) {
-		browser.storage.local.get(o.id).then(res => {
+		browser.storage.local.get(o.id).then((res) => {
 			// have to check typeof because of false
 			if (typeof res[o.id] !== "undefined") {
 				o.id === "barColorPicker"
@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", restoreOptions);
 
 for (const o of options) {
 	// save immediately when changed
-	o.addEventListener("change", option => saveOptions(option.target));
+	o.addEventListener("change", (option) => saveOptions(option.target));
 }
 
-document.getElementById("barColorDefault").addEventListener("click", e => {
+document.getElementById("barColorDefault").addEventListener("click", (e) => {
 	e.preventDefault();
 	document.getElementById("barColorPicker").value = "#b90000";
 	saveOptions(document.getElementById("barColorPicker"));

@@ -34,5 +34,8 @@
 	},
 	"scrobbleText": {
 		"message": "Remove descriptors (e.g. \"scrobbles\") from scrobble bar"
+	},
+	"timestampSwap": {
+		"message": "Use absolute timestamps (instead of relative)"
 	}
 }

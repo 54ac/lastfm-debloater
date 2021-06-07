@@ -34,5 +34,8 @@
 	},
 	"scrobbleText": {
 		"message": "Usunięcie słów opisowych (np. \"scrobbli\") z paska scrobbli"
+	},
+	"timestampSwap": {
+		"message": "Dokładne znaczniki czasu (zamiast relatywnych)"
 	}
 }
