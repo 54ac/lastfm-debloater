@@ -21,21 +21,24 @@
 		"message": "Domyślny"
 	},
 	"barFontInvert": {
-		"message": "Odwrócony kolor czcionki na pasku scrobbli (rozszerza pasek w razie potrzeby)"
+		"message": "Odwrócony kolor czcionki na pasku scrobbli (może rozszerzyć pasek)"
 	},
 	"fontFamily": {
 		"message": "Usuń główną czcionkę"
 	},
 	"fontColor": {
-		"message": "Czarny tekst (zamiast ciemnoszarego)"
+		"message": "Czarny tekst"
 	},
 	"fontWeight": {
 		"message": "Usunięcie pogrubienia czcionki w tytułach/nazwach/imionach"
 	},
+	"fontSize": {
+		"message": "Zwiększenie rozmiaru czcionki"
+	},
 	"scrobbleText": {
-		"message": "Usunięcie słów opisowych (np. \"scrobbli\") z paska scrobbli"
+		"message": "Usunięcie słów opisowych z paska scrobbli"
 	},
 	"timestampSwap": {
-		"message": "Dokładne znaczniki czasu (zamiast relatywnych)"
+		"message": "Dokładne znaczniki czasu"
 	}
 }

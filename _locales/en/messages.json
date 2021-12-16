@@ -27,15 +27,18 @@
 		"message": "Remove main font"
 	},
 	"fontColor": {
-		"message": "Black text (instead of dark gray)"
+		"message": "Black text"
 	},
 	"fontWeight": {
 		"message": "Regular font weight for song titles/artists"
 	},
+	"fontSize": {
+		"message": "Increase font size"
+	},
 	"scrobbleText": {
-		"message": "Remove descriptors (e.g. \"scrobbles\") from scrobble bar"
+		"message": "Remove descriptors from scrobble bar"
 	},
 	"timestampSwap": {
-		"message": "Use absolute timestamps (instead of relative)"
+		"message": "Use absolute timestamps"
 	}
 }

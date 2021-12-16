@@ -8,6 +8,7 @@ const options = [
 	"fontFamily",
 	"fontColor",
 	"fontWeight",
+	"fontSize",
 	"scrobbleText",
 	"timestampSwap"
 ];
@@ -38,7 +39,6 @@ function debloat() {
 
 							if (o === "artistFirst") {
 								artist.style.flexGrow = "0";
-								artist.style.flexShrink = "0";
 								artist.style.width = "inherit";
 								songName.style.width = "inherit";
 
@@ -62,7 +62,6 @@ function debloat() {
 								)[0];
 
 								artist.style.flexGrow = "0";
-								artist.style.flexShrink = "0";
 								artist.style.position = "static";
 								artist.style.marginTop = "inherit";
 								// margin copied from tracks chart - otherwise width gets changed on hover
@@ -192,6 +191,8 @@ function debloat() {
 			}
 
 			if (o === "fontColor") document.body.style.color = "#000";
+
+			if (o === "fontSize") document.body.style.fontSize = "16px";
 
 			if (o === "timestampSwap") {
 				const elements = document.getElementsByClassName("chartlist-timestamp");
