@@ -21,7 +21,7 @@ const dash = () => {
 	return newDash;
 };
 
-function debloat() {
+const debloat = () => {
 	options.forEach((o) => {
 		browser.storage.local.get(o).then((res) => {
 			if (res[o] === false) return;
@@ -54,12 +54,10 @@ function debloat() {
 						for (const row of e.getElementsByClassName("chartlist-row")) {
 							if (row.classList.contains(o)) return;
 							if (o === "artistFirst") {
-								const artist = row.getElementsByClassName(
-									"chartlist-artist"
-								)[0];
-								const songName = row.getElementsByClassName(
-									"chartlist-name"
-								)[0];
+								const artist =
+									row.getElementsByClassName("chartlist-artist")[0];
+								const songName =
+									row.getElementsByClassName("chartlist-name")[0];
 
 								artist.style.flexGrow = "0";
 								artist.style.position = "static";
@@ -169,15 +167,15 @@ function debloat() {
 				let header = document.getElementsByClassName("header-new-content");
 				if (header.length > 0) [header] = header;
 
-				if (header?.classList?.contains(o)) {
-					header.getElementsByClassName(
-						"artist-header-featured-items"
-					)[0].style.marginTop = "16px";
+				if (header?.classList?.contains(o)) return;
 
-					header.style.paddingTop = "16px";
-					header.style.paddingBottom = "16px";
-					header.classList.add(o);
-				}
+				header.getElementsByClassName(
+					"artist-header-featured-items"
+				)[0].style.marginTop = "16px";
+
+				header.style.paddingTop = "16px";
+				header.style.paddingBottom = "16px";
+				header.classList.add(o);
 			}
 
 			if (o === "fontFamily") {
@@ -226,7 +224,7 @@ function debloat() {
 			}
 		});
 	});
-}
+};
 debloat();
 
 // add mutation observer due to ajax

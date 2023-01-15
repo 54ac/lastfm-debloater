@@ -1,6 +1,6 @@
 const options = document.getElementsByClassName("option");
 
-function saveOptions(o) {
+const saveOptions = (o) => {
 	if (o.id === "barColorPicker")
 		browser.storage.local.set({
 			[o.id]: document.getElementById(o.id).value
@@ -17,9 +17,9 @@ function saveOptions(o) {
 		document.getElementById("barColorPicker").disabled = true;
 		document.getElementById("barColorDefault").disabled = true;
 	}
-}
+};
 
-function restoreOptions() {
+const restoreOptions = () => {
 	for (const o of options) {
 		browser.storage.local.get(o.id).then((res) => {
 			// have to check typeof because of false
@@ -36,10 +36,17 @@ function restoreOptions() {
 			// defaults
 			else if (o.id === "barColorPicker")
 				document.getElementById("barColorPicker").value = "#b90000";
+			else if (
+				o.id === "barColor" ||
+				o.id === "barFontInvert" ||
+				o.id === "fontSize" ||
+				o.id === "timestampSwap"
+			)
+				document.getElementById(o.id).checked = false;
 			else document.getElementById(o.id).checked = true;
 		});
 	}
-}
+};
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
 
