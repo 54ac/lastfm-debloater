@@ -1,0 +1,29 @@
+{
+	"name": "lastfm-debloater",
+	"author": {
+		"name": "rowrawer",
+		"email": "rowrawer@gmail.com",
+		"url": "https://github.com/rowrawer"
+	},
+	"repository": "github:rowrawer/lastfm-debloater",
+	"version": "1.0.0",
+	"type": "module",
+	"private": true,
+	"devDependencies": {
+		"@babel/eslint-parser": "^7.18.9",
+		"@babel/eslint-plugin": "^7.19.1",
+		"@parcel/babel-preset-env": "^2.8.3",
+		"@parcel/config-webextension": "^2.8.3",
+		"eslint": "^8.21.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"parcel": "^2.8.3",
+		"prettier": "^2.8.1",
+		"rimraf": "^5.0.0"
+	},
+	"scripts": {
+		"build": "rimraf dist && parcel build src/manifest.json --config @parcel/config-webextension --no-source-maps",
+		"start": "rimraf dist && parcel watch src/manifest.json --host localhost --config @parcel/config-webextension"
+	},
+	"browserslist": "firefox 89"
+}

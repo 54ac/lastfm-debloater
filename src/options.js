@@ -1,6 +1,10 @@
+"use strict";
+
+import defaults from "./defaults";
+
 const options = document.getElementsByClassName("option");
 
-const saveOptions = (o) => {
+const saveOption = (o) => {
 	if (o.id === "barColorPicker")
 		browser.storage.local.set({
 			[o.id]: document.getElementById(o.id).value
@@ -34,16 +38,12 @@ const restoreOptions = () => {
 				}
 			}
 			// defaults
-			else if (o.id === "barColorPicker")
-				document.getElementById("barColorPicker").value = "#b90000";
-			else if (
-				o.id === "barColor" ||
-				o.id === "barFontInvert" ||
-				o.id === "fontSize" ||
-				o.id === "timestampSwap"
-			)
-				document.getElementById(o.id).checked = false;
-			else document.getElementById(o.id).checked = true;
+			else {
+				if (o.id === "barColorPicker")
+					document.getElementById("barColorPicker").value = "#b90000";
+				else document.getElementById(o.id).checked = defaults[o.id];
+				saveOption(o);
+			}
 		});
 	}
 };
@@ -52,13 +52,13 @@ document.addEventListener("DOMContentLoaded", restoreOptions);
 
 for (const o of options) {
 	// save immediately when changed
-	o.addEventListener("change", (option) => saveOptions(option.target));
+	o.addEventListener("change", (option) => saveOption(option.target));
 }
 
 document.getElementById("barColorDefault").addEventListener("click", (e) => {
 	e.preventDefault();
 	document.getElementById("barColorPicker").value = "#b90000";
-	saveOptions(document.getElementById("barColorPicker"));
+	saveOption(document.getElementById("barColorPicker"));
 });
 
 // i18n of options menu

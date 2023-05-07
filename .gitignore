@@ -1,8 +1,4 @@
 .firefox.exe.lnk
-.firefox-esr.exe.lnk
-/web-ext-artifacts
 /dist
-package.json
-package-lock.json
 /node_modules
-.babelrc.json
+/.parcel-cache

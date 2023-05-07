@@ -40,5 +40,8 @@
 	},
 	"timestampSwap": {
 		"message": "Dokładne znaczniki czasu"
+	},
+	"wideColumn": {
+		"message": "Dopasowanie głównej kolumny do szerokości strony"
 	}
 }

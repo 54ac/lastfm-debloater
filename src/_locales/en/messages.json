@@ -40,5 +40,8 @@
 	},
 	"timestampSwap": {
 		"message": "Use absolute timestamps"
+	},
+	"wideColumn": {
+		"message": "Fit main column to page width"
 	}
 }

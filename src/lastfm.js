@@ -1,18 +1,8 @@
-const options = [
-	"artistFirst",
-	"squareAvatars",
-	"compactCharts",
-	"compactArtistHeader",
-	"barColor",
-	"barFontInvert",
-	"fontFamily",
-	"fontColor",
-	"fontWeight",
-	"fontSize",
-	"scrobbleText",
-	"timestampSwap"
-];
-// remember to add new options here as well
+"use strict";
+
+import defaults from "./defaults";
+
+const options = Object.keys(defaults);
 
 const dash = () => {
 	const newDash = document.createElement("span");
@@ -24,7 +14,9 @@ const dash = () => {
 const debloat = () => {
 	options.forEach((o) => {
 		browser.storage.local.get(o).then((res) => {
-			if (res[o] === false) return;
+			if ((res[o] && res[o] === false) || (!res[o] && defaults[o] === false))
+				return;
+
 			if (o === "artistFirst") {
 				const elements = document.getElementsByClassName(
 					"chartlist--with-artist"
@@ -44,7 +36,7 @@ const debloat = () => {
 
 								row.insertBefore(artist, songName);
 
-								if (row.getElementsByClassName("dash").length === 0)
+								if (!row.getElementsByClassName("dash").length)
 									// only if necessary
 									row.insertBefore(dash(), songName);
 							}
@@ -70,8 +62,8 @@ const debloat = () => {
 
 								// only if artist field is not empty
 								if (
-									row.getElementsByClassName("dash").length === 0 &&
-									artist.textContent.trim().length > 0
+									!row.getElementsByClassName("dash").length &&
+									artist.textContent.trim().length
 								)
 									row.insertBefore(dash(), songName);
 								row.classList.add(o);
@@ -85,8 +77,8 @@ const debloat = () => {
 				// horrible workaround for css pseudoclass
 				const rule = ".avatar::after { border-radius: 0px !important; }";
 				if (
-					document.styleSheets.length > 0 &&
-					document.styleSheets[0].cssRules.length > 0 &&
+					document.styleSheets.length &&
+					document.styleSheets[0].cssRules.length &&
 					document.styleSheets[0].cssRules[0].cssText !== rule
 				)
 					document.styleSheets[0].insertRule(rule, 0);
@@ -118,7 +110,7 @@ const debloat = () => {
 						e.style.minHeight = "0px";
 					}
 
-					if (e.getElementsByClassName("chartlist-bar").length > 0) {
+					if (e.getElementsByClassName("chartlist-bar").length) {
 						if (o === "barColor")
 							browser.storage.local
 								.get("barColorPicker")
@@ -165,7 +157,7 @@ const debloat = () => {
 
 			if (o === "compactArtistHeader") {
 				let header = document.getElementsByClassName("header-new-content");
-				if (header.length > 0) [header] = header;
+				if (header.length) [header] = header;
 
 				if (header?.classList?.contains(o)) return;
 
@@ -201,8 +193,8 @@ const debloat = () => {
 					const spanText = eSpan?.textContent;
 
 					if (
-						!eSpan.classList?.contains("chartlist-now-scrobbling") &&
-						!eSpan.classList?.contains(o) &&
+						!eSpan?.classList?.contains("chartlist-now-scrobbling") &&
+						!eSpan?.classList?.contains(o) &&
 						spanTitle &&
 						spanText
 					) {
@@ -220,6 +212,23 @@ const debloat = () => {
 						eSpan.title = spanText.trim();
 						eSpan.classList.add("timestampSwap");
 					}
+				}
+			}
+
+			if (o === "wideColumn") {
+				const container = document.getElementsByClassName("page-content")[0];
+				const containerRow = container?.getElementsByClassName("row")[0];
+				const colMain = containerRow?.getElementsByClassName("col-main")[0];
+				const colSidebar =
+					containerRow?.getElementsByClassName("col-sidebar")[0];
+
+				if (!container?.classList?.contains("wideColumn")) {
+					container.style.width = "100%";
+					containerRow.style.display = "flex";
+					colMain.style.width = "100%";
+					colSidebar.style.flexShrink = 0;
+
+					container.classList.add("wideColumn");
 				}
 			}
 		});
