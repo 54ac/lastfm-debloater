@@ -14,7 +14,10 @@ const dash = () => {
 const debloat = () => {
 	options.forEach((o) => {
 		browser.storage.local.get(o).then((res) => {
-			if ((res[o] && res[o] === false) || (!res[o] && defaults[o] === false))
+			if (
+				(typeof res[o] !== "undefined" && res[o] === false) ||
+				(!res[o] && defaults[o] === false)
+			)
 				return;
 
 			if (o === "artistFirst") {
