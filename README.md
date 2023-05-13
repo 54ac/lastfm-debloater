@@ -22,7 +22,7 @@ The betterment of Last.fm as a website. It's down to personal preference, obviou
 ### Where can I download this?
 
 - [The Firefox Addons (AMO) listing.](https://addons.mozilla.org/en-US/firefox/addon/the-last-fm-debloater/)
-- [The GitHub releases page.](https://github.com/rowrawer/lastfm-debloater/releases)
+- [The GitHub releases page.](https://github.com/54ac/lastfm-debloater/releases)
 
 ---
 
