@@ -6,7 +6,7 @@ This is a Firefox addon written in JavaScript which mitigates some of the design
 
 I wrote this addon primarily for myself, but I figured I might as well share it with the other four people who still use Last.fm. Turn it on and leave it be or untick some checkboxes if you want, depending on what suits your fancy.
 
-![A screenshot of the options menu.](https://addons.cdn.mozilla.net/user-media/previews/thumbs/221/221925.png?modified=1562435915)
+![A screenshot of the options menu.](https://addons.mozilla.org/user-media/previews/full/282/282261.png)
 
 More details and screenshots available [in the AMO listing](https://addons.mozilla.org/en-US/firefox/addon/the-last-fm-debloater/).
 
