@@ -1,11 +1,11 @@
 {
 	"name": "lastfm-debloater",
 	"author": {
-		"name": "rowrawer",
-		"email": "rowrawer@gmail.com",
-		"url": "https://github.com/rowrawer"
+		"name": "54ac",
+		"email": "me@54ac.bio",
+		"url": "https://github.com/54ac"
 	},
-	"repository": "github:rowrawer/lastfm-debloater",
+	"repository": "github:54ac/lastfm-debloater",
 	"version": "1.0.0",
 	"type": "module",
 	"private": true,
