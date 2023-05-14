@@ -219,19 +219,21 @@ const debloat = () => {
 			}
 
 			if (o === "wideColumn") {
-				const container = document.getElementsByClassName("page-content")[0];
-				const containerRow = container?.getElementsByClassName("row")[0];
-				const colMain = containerRow?.getElementsByClassName("col-main")[0];
-				const colSidebar =
-					containerRow?.getElementsByClassName("col-sidebar")[0];
+				const containers = document.getElementsByClassName("page-content");
+				for (const container of containers) {
+					const containerRow = container.getElementsByClassName("row")?.[0];
+					const colMain = containerRow?.getElementsByClassName("col-main")?.[0];
+					const colSidebar =
+						containerRow?.getElementsByClassName("col-sidebar")?.[0];
 
-				if (!container?.classList?.contains("wideColumn")) {
-					container.style.width = "100%";
-					containerRow.style.display = "flex";
-					colMain.style.width = "100%";
-					colSidebar.style.flexShrink = 0;
+					if (!container.classList?.contains("wideColumn")) {
+						container.style.width = "100%";
+						containerRow.style.display = "flex";
+						colMain.style.width = "100%";
+						colSidebar.style.flexShrink = 0;
 
-					container.classList.add("wideColumn");
+						container.classList.add("wideColumn");
+					}
 				}
 			}
 		});
