@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
 	<head>
@@ -49,10 +49,19 @@
 						<input class="option" id="barColor" type="checkbox" />
 					</td>
 					<td>
-						<input class="option" id="barColorPicker" type="color" />
+						<input
+							class="option"
+							id="barColorPicker"
+							type="color"
+							data-parent="barColor"
+						/>
 					</td>
 					<td>
-						<button id="barColorDefault" type="button"></button>
+						<button
+							id="barColorDefault"
+							type="button"
+							data-parent="barColor"
+						></button>
 					</td>
 				</tr>
 				<tr>
@@ -122,6 +131,6 @@
 			</tbody>
 		</table>
 
-		<script type="module" src="options.js"></script>
+		<script type="module" src="options.ts"></script>
 	</body>
 </html>

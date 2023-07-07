@@ -1,9 +1,14 @@
 {
 	"root": true,
-	"extends": ["eslint:recommended", "prettier"],
-	"parser": "@babel/eslint-parser",
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"prettier"
+	],
+	"parser": "@typescript-eslint/parser",
 	"parserOptions": { "requireConfigFile": false },
-	"plugins": ["@babel", "prettier"],
+	"plugins": ["@typescript-eslint", "prettier"],
 	"rules": {
 		"prettier/prettier": [
 			"error",
@@ -16,29 +21,27 @@
 		],
 		"arrow-body-style": "off",
 		"prefer-arrow-callback": "off",
-		"no-unused-vars": 1,
-		"no-console": 1,
-		"quotes": [0, "double"],
-		"react/prop-types": 0,
+		"no-console": "warn",
+		"quotes": ["off", "double"],
 		"no-plusplus": [
-			2,
+			"off",
 			{
 				"allowForLoopAfterthoughts": true
 			}
 		],
-		"eqeqeq": [1, "smart"],
-		"strict": [0, "global"],
+		"eqeqeq": ["warn", "smart"],
 		"no-unused-expressions": [
-			2,
+			"off",
 			{
 				"allowTernary": true
 			}
-		]
+		],
+		"@typescript-eslint/no-shadow": "error",
+		"no-shadow": "off",
+		"no-undef": "off",
+		"@typescript-eslint/no-unused-vars": "warn"
 	},
 	"env": {
-		"browser": true,
-		"node": true,
-		"webextensions": true,
-		"es6": true
+		"webextensions": true
 	}
 }
