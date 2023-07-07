@@ -2,7 +2,7 @@
 
 ### What is this?
 
-This is a Firefox addon written in JavaScript which mitigates some of the design choices regarding the music website [Last.fm](https://www.last.fm/) in the form of a handy options menu.
+This is a Firefox addon written in TypeScript which mitigates some of the design choices regarding the music website [Last.fm](https://www.last.fm/) in the form of a handy options menu.
 
 I wrote this addon primarily for myself, but I figured I might as well share it with the other four people who still use Last.fm. Turn it on and leave it be or untick some checkboxes if you want, depending on what suits your fancy.
 
