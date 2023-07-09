@@ -8,18 +8,18 @@ const calculateStyles = async () => {
 
 	if (options.artistFirst) {
 		stylesArr.push(`
-		.chartlist--with-artist :not(.chartlist--with-bar) .chartlist-artist {
+		.chartlist--with-artist:not(.chartlist--with-bar) .chartlist-artist {
 			flex-grow: 0 !important;
 			width: inherit !important;
 		}`);
 
 		stylesArr.push(`
-		.chartlist--with-artist :not(.chartlist--with-bar) .chartlist-name {
+		.chartlist--with-artist:not(.chartlist--with-bar) .chartlist-name {
 			width: inherit !important;
 		}`);
 
 		stylesArr.push(`
-		.chartlist--with-artist .chartlist--with-bar .chartlist-artist {
+		.chartlist--with-artist.chartlist--with-bar .chartlist-artist {
 			flex-grow: 0 !important;
 			position: static !important;
 			margin-top: inherit !important;
@@ -27,7 +27,7 @@ const calculateStyles = async () => {
 		}`);
 
 		stylesArr.push(`
-		.chartlist--with-artist .chartlist--with-bar .chartlist-name {
+		.chartlist--with-artist.chartlist--with-bar .chartlist-name {
 			margin-bottom: inherit !important;
 		}`);
 	}
