@@ -13,6 +13,7 @@ export type Options = {
 	scrobbleText: boolean;
 	timestampSwap: boolean;
 	wideColumn: boolean;
+	styles: string;
 };
 
 export const defaults: Options = {
@@ -29,5 +30,6 @@ export const defaults: Options = {
 	fontSize: false,
 	scrobbleText: true,
 	timestampSwap: false,
-	wideColumn: true
+	wideColumn: true,
+	styles: ""
 };

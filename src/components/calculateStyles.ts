@@ -1,8 +1,8 @@
-import { getAllStorage } from "./storage";
+import { getAllStorage, setStorage } from "./storage";
 import { Options } from "./defaults";
 
 const calculateStyles = async () => {
-	const stylesArr: string[] = [];
+	const stylesArr = [];
 
 	const options = (await getAllStorage()) as Options;
 
@@ -125,7 +125,7 @@ const calculateStyles = async () => {
 		}`);
 	}
 
-	return stylesArr;
+	setStorage({ styles: stylesArr.join(" ") });
 };
 
 export default calculateStyles;

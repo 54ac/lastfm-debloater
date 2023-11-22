@@ -1,5 +1,6 @@
 import { setStorage, getAllStorage } from "./components/storage";
 import { Options, defaults } from "./components/defaults";
+import calculateStyles from "./components/calculateStyles";
 
 const optionEls = Array.from(
 	document.getElementsByClassName("option")
@@ -23,6 +24,8 @@ const saveOption = async (o: HTMLInputElement) => {
 		await setStorage({
 			[o.id]: o.value
 		});
+
+	calculateStyles();
 };
 
 const restoreOptions = async () => {
