@@ -8,7 +8,7 @@ I wrote this addon primarily for myself, but I figured I might as well share it 
 
 ![A screenshot of the options menu.](https://addons.mozilla.org/user-media/previews/full/282/282261.png)
 
-More details and screenshots available [in the AMO listing](https://addons.mozilla.org/en-US/firefox/addon/the-last-fm-debloater/).
+More details and screenshots available in the listings on [AMO](https://addons.mozilla.org/en-US/firefox/addon/the-last-fm-debloater/) and the [Chrome Web Store](https://chromewebstore.google.com/detail/the-lastfm-debloater/fnjabddhcmfpphneajnckngdehgbclif).
 
 ### What is this written in?
 
@@ -22,6 +22,7 @@ The betterment of Last.fm as a website. It's down to personal preference, obviou
 ### Where can I download this?
 
 - [The Firefox Addons (AMO) listing.](https://addons.mozilla.org/en-US/firefox/addon/the-last-fm-debloater/)
+- [The Chrome Web Store.](https://chromewebstore.google.com/detail/the-lastfm-debloater/fnjabddhcmfpphneajnckngdehgbclif)
 - [The GitHub releases page.](https://github.com/54ac/lastfm-debloater/releases)
 
 ---
