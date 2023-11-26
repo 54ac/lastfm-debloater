@@ -30,6 +30,6 @@ export const defaults: Options = {
 	fontSize: false,
 	scrobbleText: true,
 	timestampSwap: false,
-	wideColumn: true,
+	wideColumn: false,
 	styles: ""
 };

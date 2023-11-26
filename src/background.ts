@@ -6,15 +6,16 @@ const init = async () => {
 	const optionsStorage = (await getAllStorage()) as Options;
 
 	//initialize default settings
-	Object.keys(defaults).forEach(
-		async (key) =>
-			(optionsStorage === null ||
-				optionsStorage[key as keyof Options] === null) &&
-			(key !== "styles"
+	Object.keys(defaults).forEach(async (key) => {
+		if (
+			optionsStorage === null ||
+			optionsStorage[key as keyof Options] === undefined
+		)
+			key !== "styles"
 				? await setStorage({
 						[key]: defaults[key as keyof typeof defaults]
 				  })
-				: calculateStyles())
-	);
+				: calculateStyles();
+	});
 };
 init();
