@@ -125,7 +125,7 @@ const calculateStyles = async () => {
 		}`);
 	}
 
-	setStorage({ styles: stylesArr.join(" ") });
+	setStorage({ styles: stylesArr.length > 0 ? stylesArr.join(" ") : "" });
 };
 
 export default calculateStyles;
