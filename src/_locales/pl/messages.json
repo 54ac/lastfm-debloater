@@ -43,5 +43,8 @@
 	},
 	"wideColumn": {
 		"message": "Dopasowanie głównej kolumny do szerokości strony"
+	},
+	"newOptionsButton": {
+		"message": "Debloater - opcje"
 	}
 }

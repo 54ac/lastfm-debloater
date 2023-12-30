@@ -100,7 +100,7 @@ const mainObserver = new MutationObserver(async () => {
 		if (!recentOptionsEl.getElementsByClassName("form-submit").length) return;
 
 		const newOptionsButton = document.createElement("button");
-		newOptionsButton.textContent = "Debloater options";
+		newOptionsButton.textContent = chrome.i18n.getMessage("newOptionsButton");
 		newOptionsButton.className = "btn-cancel"; //consistent styling
 		newOptionsButton.onclick = () =>
 			chrome.runtime.sendMessage({ action: "openOptions" });
