@@ -90,6 +90,26 @@ const mainObserver = new MutationObserver(async () => {
 			row.classList.add("debloat-timestamp-swap");
 		}
 	}
+
+	//add options button
+	const recentOptionsEl = document.getElementById("recent-tracks-settings");
+	if (
+		recentOptionsEl &&
+		!recentOptionsEl.classList.contains("debloat-options-button")
+	) {
+		if (!recentOptionsEl.getElementsByClassName("form-submit").length) return;
+
+		const newOptionsButton = document.createElement("button");
+		newOptionsButton.textContent = "Debloater options";
+		newOptionsButton.className = "btn-cancel"; //consistent styling
+		newOptionsButton.onclick = () =>
+			chrome.runtime.sendMessage({ action: "openOptions" });
+		recentOptionsEl
+			.getElementsByClassName("form-submit")[0]
+			.appendChild(newOptionsButton); //next to the cancel button
+
+		recentOptionsEl.classList.add("debloat-options-button");
+	}
 });
 //must be observed as these elements are not available on page load
 mainEl && mainObserver.observe(mainEl, { childList: true, subtree: true });

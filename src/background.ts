@@ -14,8 +14,13 @@ const init = async () => {
 			key !== "styles"
 				? await setStorage({
 						[key]: defaults[key as keyof typeof defaults]
-				  })
+					})
 				: calculateStyles();
 	});
 };
 init();
+
+chrome.runtime.onMessage.addListener(
+	(message: { action: string }) =>
+		message.action === "openOptions" && chrome.runtime.openOptionsPage()
+);
