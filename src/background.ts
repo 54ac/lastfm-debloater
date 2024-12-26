@@ -11,11 +11,11 @@ const init = async () => {
 			optionsStorage === null ||
 			optionsStorage[key as keyof Options] === undefined
 		)
-			key !== "styles"
-				? await setStorage({
-						[key]: defaults[key as keyof typeof defaults]
-					})
-				: calculateStyles();
+			if (key === "styles") calculateStyles();
+			else
+				await setStorage({
+					[key]: defaults[key as keyof Options]
+				});
 	});
 };
 init();

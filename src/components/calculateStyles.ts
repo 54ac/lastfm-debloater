@@ -34,8 +34,14 @@ const calculateStyles = async () => {
 
 	if (options.squareAvatars)
 		stylesArr.push(`
-		.avatar::after, .avatar img {
+		.avatar::after, .avatar:not(.tasteometer-avatar) img, .auth-avatar-desktop {
 			border-radius: 0 !important;
+		}`);
+
+	if (options.noAvatarBorder)
+		stylesArr.push(`
+		.avatar::after, .avatar:not(.tasteometer-avatar) img, .auth-avatar-desktop {
+			box-shadow: none !important;
 		}`);
 
 	if (options.compactCharts)

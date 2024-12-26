@@ -1,6 +1,7 @@
-export type Options = {
+export interface Options {
 	artistFirst: boolean;
 	squareAvatars: boolean;
+	noAvatarBorder: boolean;
 	compactCharts: boolean;
 	compactArtistHeader: boolean;
 	barColor: boolean;
@@ -14,11 +15,12 @@ export type Options = {
 	timestampSwap: boolean;
 	wideColumn: boolean;
 	styles: string;
-};
+}
 
 export const defaults: Options = {
 	artistFirst: true,
 	squareAvatars: true,
+	noAvatarBorder: false,
 	compactCharts: true,
 	compactArtistHeader: true,
 	barColor: false,

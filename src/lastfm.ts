@@ -36,9 +36,7 @@ const mainObserver = new MutationObserver(async () => {
 		);
 
 		//for each row, find artist and song name elements, switch them around, then insert dash inbetween
-		for (let i = 0; i < artistFirstEl.length; i++) {
-			const row = artistFirstEl[i];
-
+		for (const row of Array.from(artistFirstEl)) {
 			const artist = row.getElementsByClassName("chartlist-artist")[0];
 			const songName = row.getElementsByClassName("chartlist-name")[0];
 
@@ -60,8 +58,7 @@ const mainObserver = new MutationObserver(async () => {
 	if (options.timestampSwap) {
 		const timestampEls = document.getElementsByClassName("chartlist-timestamp");
 
-		for (let i = 0; i < timestampEls.length; i++) {
-			const row = timestampEls[i];
+		for (const row of Array.from(timestampEls)) {
 			if (row.classList.contains("debloat-timestamp-swap")) continue;
 
 			const spanEl = row.getElementsByTagName("span")[0];
@@ -111,5 +108,6 @@ const mainObserver = new MutationObserver(async () => {
 		recentOptionsEl.classList.add("debloat-options-button");
 	}
 });
-//must be observed as these elements are not available on page load
-mainEl && mainObserver.observe(mainEl, { childList: true, subtree: true });
+
+// main must be observed as these elements are not available on page load
+if (mainEl) mainObserver.observe(mainEl, { childList: true, subtree: true });

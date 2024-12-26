@@ -8,6 +8,9 @@
 	"squareAvatars": {
 		"message": "Square avatars/artist images"
 	},
+	"noAvatarBorder": {
+		"message": "Remove avatar border"
+	},
 	"compactCharts": {
 		"message": "Compact rows in charts"
 	},

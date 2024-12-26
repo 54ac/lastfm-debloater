@@ -2,32 +2,33 @@
 	"name": "lastfm-debloater",
 	"author": {
 		"name": "54ac",
-		"email": "me@54ac.bio",
+		"email": "me@54ac.ovh",
 		"url": "https://github.com/54ac"
 	},
 	"repository": "github:54ac/lastfm-debloater",
-	"version": "1.0.0",
-	"type": "module",
 	"private": true,
+	"version": "1.6.6",
+	"type": "module",
+	"scripts": {
+		"start": "cross-env TARGET=firefox vite",
+		"start:chrome": "vite",
+		"build": "npm-run-all build:*",
+		"build:firefox": "tsc & cross-env TARGET=firefox vite build",
+		"build:chrome": "tsc & vite build"
+	},
 	"devDependencies": {
-		"@parcel/config-webextension": "^2.8.3",
-		"@types/chrome": "^0.0.254",
-		"@typescript-eslint/eslint-plugin": "^6.5.0",
-		"@typescript-eslint/parser": "^6.5.0",
-		"cpy-cli": "^5.0.0",
+		"@types/chrome": "^0.0.287",
+		"@typescript-eslint/eslint-plugin": "^8.18.1",
+		"@typescript-eslint/parser": "^8.18.1",
+		"cross-env": "^7.0.3",
 		"eslint": "^8.41.0",
 		"eslint-config-prettier": "^9.0.0",
-		"eslint-plugin-prettier": "^5.0.0",
-		"parcel": "^2.8.3",
-		"prettier": "^3.0.0",
-		"rimraf": "^5.0.1",
-		"typescript": "^5.0.4"
-	},
-	"scripts": {
-		"build": "npm run build-firefox && npm run build-chrome",
-		"build-firefox": "cpy -u 1 src/manifest-firefox.json . --rename=manifest.json && rimraf dist && parcel build src/manifest.json --config @parcel/config-webextension --no-source-maps && rimraf src/manifest.json",
-		"build-chrome": "cpy -u 1 src/manifest-chrome.json . --rename=manifest.json && rimraf dist-chrome && parcel build src/manifest.json --config @parcel/config-webextension --no-source-maps --dist-dir=dist-chrome && rimraf src/manifest.json",
-		"start": "cpy -u 1 src/manifest-firefox.json . --rename=manifest.json && rimraf dist && parcel watch src/manifest.json --host localhost --config @parcel/config-webextension && rimraf src/manifest.json"
-	},
-	"browserslist": "firefox 89"
+		"eslint-plugin-prettier": "^5.0.1",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^3.1.0",
+		"typescript": "^5.7.2",
+		"vite": "^6.0.4",
+		"vite-plugin-eslint": "^1.8.1",
+		"vite-plugin-web-extension": "^4.0.0"
+	}
 }

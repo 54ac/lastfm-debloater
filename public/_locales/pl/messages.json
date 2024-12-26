@@ -8,6 +8,9 @@
 	"squareAvatars": {
 		"message": "Kwadratowe avatary/miniaturki artystów"
 	},
+	"noAvatarBorder": {
+		"message": "Usuń obramowanie avatarów"
+	},
 	"compactCharts": {
 		"message": "Węższe wiersze w tabelach"
 	},
