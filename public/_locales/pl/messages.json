@@ -49,5 +49,8 @@
 	},
 	"newOptionsButton": {
 		"message": "Debloater - opcje"
+	},
+	"wideTopTrackTitle": {
+		"message": "Więcej miejsca na tytuł najpopularniejszego utworu"
 	}
 }

@@ -14,6 +14,7 @@ export interface Options {
 	scrobbleText: boolean;
 	timestampSwap: boolean;
 	wideColumn: boolean;
+	wideTopTrackTitle: boolean;
 	styles: string;
 }
 
@@ -33,5 +34,6 @@ export const defaults: Options = {
 	scrobbleText: true,
 	timestampSwap: false,
 	wideColumn: false,
+	wideTopTrackTitle: true,
 	styles: ""
 };

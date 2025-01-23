@@ -131,6 +131,12 @@ const calculateStyles = async () => {
 		}`);
 	}
 
+	if (options.wideTopTrackTitle)
+		stylesArr.push(`
+		.header-featured-track .featured-item-name {
+    	margin-left: -150% !important;
+		}`);
+
 	setStorage({ styles: stylesArr.length > 0 ? stylesArr.join(" ") : "" });
 };
 

@@ -49,5 +49,8 @@
 	},
 	"newOptionsButton": {
 		"message": "Debloater options"
+	},
+	"wideTopTrackTitle": {
+		"message": "More space for top track title"
 	}
 }
