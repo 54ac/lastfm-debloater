@@ -35,23 +35,33 @@ const mainObserver = new MutationObserver(async () => {
 			"chartlist-row--with-artist chartlist-row"
 		);
 
-		//for each row, find artist and song name elements, switch them around, then insert dash inbetween
 		for (const row of Array.from(artistFirstEl)) {
 			const artist = row.getElementsByClassName("chartlist-artist")[0];
 			const songName = row.getElementsByClassName("chartlist-name")[0];
 
 			if (!artist || !songName) continue;
 
-			if (!row.classList.contains("debloat-artist-first")) {
-				row.insertBefore(artist, songName);
-				row.classList.add("debloat-artist-first");
-			}
+			//check if mobile
+			if (window.getComputedStyle(row).display === "flex") {
+				//for each row, find artist and song name elements, switch them around, then insert dash inbetween
+				if (!row.classList.contains("debloat-artist-first")) {
+					row.insertBefore(artist, songName);
+					row.classList.add("debloat-artist-first");
+				}
 
-			if (
-				!row.getElementsByClassName("debloat-dash").length &&
-				artist.textContent?.trim()
-			)
-				row.insertBefore(dash(), songName);
+				if (
+					!row.getElementsByClassName("debloat-dash").length &&
+					artist.textContent?.trim()
+				)
+					row.insertBefore(dash(), songName);
+			} else {
+				//cram artist and song name together in one td for compatibility - not optimal
+				if (!row.classList.contains("debloat-artist-first")) {
+					songName.innerHTML = `${artist.innerHTML} – ${songName.innerHTML}`;
+					artist.remove();
+					row.classList.add("debloat-artist-first");
+				}
+			}
 		}
 	}
 
