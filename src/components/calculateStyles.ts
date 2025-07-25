@@ -38,9 +38,9 @@ const calculateStyles = async () => {
 			border-radius: 0 !important;
 		}`);
 
-	if (options.noAvatarBorder)
+	if (options.noImageBorder)
 		stylesArr.push(`
-		.avatar::after, .avatar:not(.tasteometer-avatar) img, .auth-avatar-desktop {
+		.avatar::after, .avatar:not(.tasteometer-avatar) img, .auth-avatar-desktop, .cover-art::after {
 			box-shadow: none !important;
 		}`);
 

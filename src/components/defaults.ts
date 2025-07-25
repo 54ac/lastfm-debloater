@@ -1,7 +1,7 @@
 export interface Options {
 	artistFirst: boolean;
 	squareAvatars: boolean;
-	noAvatarBorder: boolean;
+	noImageBorder: boolean;
 	compactCharts: boolean;
 	compactArtistHeader: boolean;
 	barColor: boolean;
@@ -21,7 +21,7 @@ export interface Options {
 export const defaults: Options = {
 	artistFirst: true,
 	squareAvatars: true,
-	noAvatarBorder: false,
+	noImageBorder: false,
 	compactCharts: true,
 	compactArtistHeader: true,
 	barColor: false,
